@@ -1,0 +1,280 @@
+@use '../../../styles/variables' as v;
+@import '../../styles/breakpoint.scss';
+
+.navbar {
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  min-height: 75px;
+  // color: v.$textColor-colorWhite;
+
+  &_links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: -100vw;
+    top: -100vh;
+    bottom: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100vh;
+    padding: 2rem;
+    background-color: v.$textColor-colorWhite;
+    transition: all 0.6s ease-in-out;
+    box-shadow: -3px 1px 5px 0px lightgrey;
+    //border-radius: 0 0 0 6rem;
+  }
+
+  &_link {
+    width: 100%;
+    display: block;
+    padding: 1.5rem;
+    font-size: 5vw;
+    color: v.$textColor-colorBlue;
+    text-shadow: 1px 1px lightgrey;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  &_item {
+    text-align: center;
+  }
+
+  &_item:hover {
+    box-shadow: 0px 1px 5px 0px lightgrey;
+    //border-radius: 6rem 0 6rem 0;
+    width: 100%;
+    padding: auto;
+    text-align: center;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &_link:hover {
+    text-decoration: underline;
+  }
+
+  &_burger {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    right: 1.5rem;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  @include media(desktop) {
+    &_burger-hidden {
+      display: none;
+    }
+  }
+
+  &-bar,
+  &-bar::before,
+  &-bar::after {
+    display: block;
+    width: 2rem;
+    height: 3px;
+    position: relative;
+    //border-radius: 3px;
+    background: v.$textColor-colorDark;
+    transition: all 0.4s ease-in-out;
+  }
+
+  &-bar::before,
+  &-bar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+
+  &-bar::before {
+    transform: translateY(-12px);
+  }
+
+  &-bar::after {
+    transform: translateY(12px);
+  }
+
+  &_menu-open &_links {
+    top: 0%;
+    right: 0%;
+    width: 50%;
+    height: 100%;
+    visibility: visible;
+    //border-radius: 6rem 0rem 6rem 0rem;
+    //box-shadow: 2px 2px 5px 3px black;
+  }
+
+  @include media(desktop) {
+    &navbar_item {
+      width: 100%;
+    }
+
+    &_menu-open &_links {
+      width: 15%;
+    }
+  }
+
+  &_menu-open &-bar::before {
+    transform: rotate(45deg);
+  }
+
+  &_menu-open &-bar {
+    width: 0;
+    background: transparent;
+  }
+
+  &_menu-open &-bar::after {
+    transform: rotate(-45deg);
+  }
+}
+
+.navbar-dark {
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  min-height: 75px;
+  color: v.$textColor-colorWhite;
+
+  &_links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    color: v.$textColor-colorWhite;
+    right: -100vw;
+    top: -100vh;
+    bottom: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100vh;
+    padding: 2rem;
+    background-color: v.$textColor-colorWhite;
+    transition: all 0.6s ease-in-out;
+    box-shadow: -3px 1px 5px 0px lightgrey;
+    //border-radius: 0 0 0 6rem;
+  }
+
+  &_link {
+    width: 100%;
+    display: block;
+    padding: 1.5rem;
+    font-size: 5vw;
+    color: v.$textColor-colorWhite;
+    text-shadow: 1px 1px lightgrey;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  &_item {
+    text-align: center;
+    color: v.$textColor-colorWhite;
+  }
+
+  &_item:hover {
+    box-shadow: 0px 1px 5px 0px lightgrey;
+    //border-radius: 6rem 0 6rem 0;
+    width: 100%;
+    padding: auto;
+    text-align: center;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &_link:hover {
+    text-decoration: underline;
+  }
+
+  &_burger {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    right: 1.5rem;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  @include media(desktop) {
+    &_burger-hidden {
+      display: none;
+    }
+  }
+
+  &-bar,
+  &-bar::before,
+  &-bar::after {
+    display: block;
+    width: 2rem;
+    height: 3px;
+    position: relative;
+    //border-radius: 3px;
+    background: v.$textColor-colorDark;
+    transition: all 0.4s ease-in-out;
+  }
+
+  &-bar::before,
+  &-bar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+
+  &-bar::before {
+    transform: translateY(-12px);
+  }
+
+  &-bar::after {
+    transform: translateY(12px);
+  }
+
+  &_menu-open &_links {
+    top: 0%;
+    right: 0%;
+    width: 50%;
+    height: 100%;
+    visibility: visible;
+    //border-radius: 6rem 0rem 6rem 0rem;
+    //box-shadow: 2px 2px 5px 3px black;
+  }
+
+  @include media(desktop) {
+    &navbar_item {
+      width: 100%;
+    }
+
+    &_menu-open &_links {
+      width: 15%;
+    }
+  }
+
+  &_menu-open &-bar::before {
+    transform: rotate(45deg);
+  }
+
+  &_menu-open &-bar {
+    width: 0;
+    background: transparent;
+  }
+
+  &_menu-open &-bar::after {
+    transform: rotate(-45deg);
+  }
+}

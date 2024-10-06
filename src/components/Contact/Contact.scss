@@ -1,0 +1,261 @@
+@use '../../styles/variables' as v;
+@import '../../styles/breakpoint.scss';
+
+.contact {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  &_presentation {
+    width: 90%;
+    @include media(desktop) {
+      width: 70%;
+    }
+    @include media(tablet) {
+      width: 70%;
+    }
+    @include media(tablet_mini) {
+      width: 70%;
+    }
+
+    &_title {
+      padding-bottom: 1rem;
+      margin: 1rem 0;
+      text-align: center;
+      color: black;
+    }
+
+    &_text {
+      width: 90%;
+      text-align: justify;
+      padding-left: 1.5rem;
+      color: black;
+    }
+  }
+
+  &_modal {
+    background-color: white;
+    border-radius: 5px;
+    padding: 2rem;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    @include media(tablet_mini) {
+      width: 80%;
+    }
+    @include media(tablet) {
+      width: 60%;
+    }
+    @include media(desktop) {
+      width: 50%;
+    }
+
+    &_form {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 100%;
+      font-size: 1rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+      border: 1px solid rgba( 255, 255, 255, 0.18 );
+      border-radius: 5px;
+      color: black;
+      padding: 1rem;
+      @include media(tablet_mini) {
+        gap: 2rem;
+
+      }
+
+      &_field {
+        position: relative;
+
+        textarea {
+          border-radius: 5px;
+          border: 1px solid black;
+          width: 100%;
+        }
+
+        input {
+          border: 1px solid black;
+          width: 100%;
+          border-radius: 5px;
+        }
+
+        label {
+          top: 0;
+          left: 0;
+          pointer-events: none;
+          color: #595959;
+          transition: 0.3s;
+          margin-bottom: 1.5rem;
+        }
+
+        /* We select label when input is focus */
+      }
+
+      button {
+        border-radius: 5px;
+        border: none;
+        background-color: v.$textColor-colorBlue;
+        color: white;
+        font-weight: 500;
+        height: 35px;
+      }
+    }
+
+    .contact_modal_changeFormBtn {
+      padding-top: 1rem;
+      border: none;
+      background-color: transparent;
+      font-style: italic;
+      width: 100%;
+    }
+
+    .contact_status_message {
+      color: v.$textColor-colorGreen;
+      font-size: 1.5rem;
+      font-weight: 500;
+      text-align: center;
+      margin: auto;
+      background-color: white;
+      box-shadow: v.$shadowColor;
+    }
+  }
+}
+
+.contact-dark {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: center;
+  background-color: v.$textColor-colorDark-Blue;
+  color: v.$textColor-colorWhite;
+
+  &_presentation {
+    width: 90%;
+    @include media(desktop) {
+      width: 70%;
+    }
+    @include media(tablet) {
+      width: 70%;
+    }
+    @include media(tablet_mini) {
+      width: 70%;
+    }
+
+    &_title {
+      padding-bottom: 1rem;
+      margin: 1rem 0;
+      text-align: center;
+      color: v.$textColor-colorWhite;
+    }
+
+    &_text {
+      width: 90%;
+      text-align: justify;
+      padding-left: 1.5rem;
+      color: v.$textColor-colorWhite;
+    }
+  }
+
+  &_modal {
+    background-color: v.$textColor-colorDark-Blue;
+    border-radius: 5px;
+    padding: 2rem;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    color: v.$textColor-colorWhite;
+    @include media(tablet_mini) {
+      width: 80%;
+    }
+    @include media(tablet) {
+      width: 60%;
+    }
+    @include media(desktop) {
+      width: 50%;
+    }
+
+    &_form {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 100%;
+      font-size: 1rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+      border: 1px solid rgba( 255, 255, 255, 0.18 );
+      border-radius: 5px;
+      padding: 1rem;
+      color: v.$textColor-colorWhite;
+      @include media(tablet_mini) {
+        gap: 2rem;
+
+      }
+
+      &_field {
+        position: relative;
+        color: v.$textColor-colorWhite;
+        background-color: v.$textColor-colorDark-Blue;
+
+        textarea {
+          border: 1px solid white;
+          border-radius: 5px;
+          width: 100%;
+          color: v.$textColor-colorWhite;
+          background-color: v.$textColor-colorDark-Blue;
+        }
+
+        input {
+          border: 1px solid white;
+          width: 100%;
+          border-radius: 5px;
+          color: v.$textColor-colorWhite;
+          background-color: v.$textColor-colorDark-Blue;
+        }
+
+        label {
+          top: 0;
+          left: 0;
+          pointer-events: none;
+          transition: 0.3s;
+          color: v.$textColor-colorWhite;
+        }
+      }
+
+      button {
+        border-radius: 5px;
+        border: none;
+        background-color: v.$textColor-colorBlue;
+        color: white;
+        font-weight: 500;
+        height: 35px;
+      }
+    }
+
+    .contact-dark_modal_changeFormBtn {
+      padding-top: 1rem;
+      border: none;
+      background-color: transparent;
+      font-style: italic;
+      width: 100%;
+    }
+
+    .contact-dark_status_message {
+      color: v.$textColor-colorGreen;
+      font-size: 1.5rem;
+      font-weight: 500;
+      text-align: center;
+      margin: auto;
+      background-color: white;
+      box-shadow: v.$shadowColor;
+    }
+  }
+}

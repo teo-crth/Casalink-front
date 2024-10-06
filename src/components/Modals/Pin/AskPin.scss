@@ -1,0 +1,85 @@
+@use '../../../styles/variables' as v;
+@import '../../../styles/breakpoint.scss';
+
+.formDiv {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: RGBA(0, 0, 0, 0.5);
+  z-index: 5;
+}
+
+.form {
+  position: relative;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 1rem;
+  z-index: 1;
+  width: 92%;
+  background-color: #ececec;
+  @include media(tablet_mini) {
+    max-width: 400px;
+    gap: 2rem;
+  }
+
+  &_container_btns {
+    display: flex;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: transparent;
+
+    &_exit {
+      cursor: pointer;
+      border: none;
+    }
+  }
+
+  &_label {
+    top: -0.9rem;
+    left: 0;
+    pointer-events: none;
+    font-size: 1rem;
+    font-weight: 400;
+    color: v.$textColor-colorBlue;
+    transition: 0.3s;
+  }
+
+  &_input_required {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+    background-color: transparent;
+    top: -0.9rem;
+    padding: 0.1rem, 0.2rem;
+  }
+
+  &_input_required:focus {
+    outline: none !important;
+    border: 1px solid v.$textColor-colorBlue;
+    border-radius: 5px;
+  }
+
+  &_error {
+    color: red;
+    font-size: 0.9rem;
+  }
+
+  &_button {
+    border-radius: 5px;
+    padding: 0.3rem;
+    border: none;
+    cursor: pointer;
+    background-color: v.$textColor-colorBlue;
+    color: white;
+    font-weight: 500;
+  }
+}

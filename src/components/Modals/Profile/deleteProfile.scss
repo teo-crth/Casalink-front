@@ -1,0 +1,114 @@
+@use '../../../styles/variables' as v;
+@import '../../../styles/breakpoint.scss';
+
+.profile_background {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: RGBA(0, 0, 0, 0.5);
+  z-index: 1;
+
+  .delete_modal {
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    z-index: 1;
+    width: 90%;
+    background-color: #ececec;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    @include media(tablet_mini) {
+      max-width: 80%;
+    }
+    @include media(desktop) {
+      margin-top: 1rem;
+      height: 30rem;
+      width: 50rem;
+    }
+
+    .exit_button {
+      position: absolute;
+      top: 1px;
+      right: 1px;
+      border: none;
+    }
+      .delete_modal_title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        text-align: center;
+        @include media(desktop) {
+          width: 100%;
+          margin-top: 0;
+          margin-bottom: 1rem;
+        }
+        @include media(tablet_mini) {
+          width: 100%;
+          margin-top: 0;
+          margin-bottom: 1rem;
+        }
+      }
+
+      .delete_modal_subtitle {
+        font-size: 1rem;
+        font-weight: 500;
+        text-align: center;
+        margin: 1.5rem 0;
+        @include media(desktop) {
+          width: 100%;
+          margin-top: 0;
+        }
+        @include media(tablet_mini) {
+          width: 100%;
+          margin-top: 0;
+        }
+      }
+
+      .delete_modal_profile_containerButton {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        @include media(tablet_mini) {
+          flex-wrap: nowrap;
+          width: 100%;
+          justify-content: space-evenly;
+        }
+        @include media(desktop) {
+          flex-wrap: nowrap;
+          width: 100%;
+          justify-content: space-evenly;
+        }
+      }
+
+      button {
+        border-radius: 5px;
+        padding: 0.5rem;
+        border: none;
+        cursor: pointer;
+        background-color: v.$textColor-colorBlue;
+        color: white;
+        font-weight: 500;
+        @include media(desktop) {
+          width: 40%;
+        }
+        @include media(tablet_mini) {
+          width: 40%;
+        }
+      }
+
+    .delete_modal_changeFormBtn {
+      padding-top: 1rem;
+      border: none;
+      background-color: transparent;
+      font-style: italic;
+      width: 100%;
+    }
+  }
+}

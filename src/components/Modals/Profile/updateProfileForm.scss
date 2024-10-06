@@ -1,0 +1,205 @@
+@use '../../../styles/variables' as v;
+@import '../../../styles/breakpoint.scss';
+
+.profile_background {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: RGBA(0, 0, 0, 0.5);
+  z-index: 1;
+
+  .update_modal {
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    z-index: 1;
+    width: 90%;
+    background-color: #ececec;
+    margin-top: 2rem;
+    @include media(tablet_mini) {
+      max-width: 80%;
+    }
+    @include media(desktop) {
+      margin-top: 1rem;
+      height: 30rem;
+      width: 50rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      height: 100%;
+      @include media(tablet_mini) {
+        gap: 2rem;
+      }
+
+      .update_modal_title {
+        @include media(desktop) {
+          width: 100%;
+          margin-top: 0;
+        }
+        @include media(tablet_mini) {
+          width: 100%;
+          margin-top: 0;
+        }
+      }
+      .update_modal_container_inputs {
+        @include media(desktop) {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 1rem;
+        }
+      }
+      .profile_field_role {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-top: 1.5rem;
+        @include media(desktop) {
+          width: 82%;
+          margin-top: 0.2rem;
+        }
+        @include media(tablet_mini) {
+          width: 82%;
+          margin-top: 0.2rem;
+        }
+        .profile_field_role_child, .profile_field_role_adult {
+          @include media(desktop) {
+            width: 100%;
+          }
+          @include media(tablet_mini) {
+            width: 100%;
+          }
+        }
+
+        .input_checkbox_adult,
+        .input_checkbox_child {
+          width: 20%;
+          margin-top: 0.5rem;
+          @include media(desktop) {
+            margin-right: 1rem;
+          }
+          @include media(tablet_mini) {
+            margin-right: 1rem;
+          }
+        }
+
+        .input_checkbox_child_title,
+        .input_checkbox_adult_title {
+          font-size: 1rem;
+          font-weight: 500;
+          margin-top: 0.5rem;
+        }
+      }
+
+      .profile_field {
+        position: relative;
+        margin-bottom: 1rem;
+        @include media(desktop) {
+          width: 40%;
+          display: flex;
+          justify-content: space-evenly;
+          flex-direction: column;
+        }
+        @include media(tablet_mini) {
+          width: 40%;
+          display: flex;
+          justify-content: space-evenly;
+          flex-direction: column;
+        }
+
+      .image {
+        @include media(desktop) {
+          width: 82%;
+        }
+        @include media(tablet_mini) {
+          width: 82%;
+        }
+      }
+
+        input {
+          border: none;
+          border-bottom: 1px solid black;
+          width: 100%;
+          background-color: transparent;
+          @include media(desktop) {
+            margin-top: 0.5rem;
+          }
+          @include media(tablet_mini) {
+            margin-top: 0.5rem;
+          }
+        }
+
+        input:focus {
+          outline: none !important;
+          border: 1px solid v.$textColor-colorBlue;
+          border-radius: 5px;
+        }
+
+        label {
+          pointer-events: none;
+          color: black;
+          transition: 0.3s;
+          font-weight: 500;
+        }
+
+        input:focus ~ label,
+        .input_required:valid ~ label {
+          top: -0.9rem;
+          font-size: 1rem;
+          font-weight: 400;
+          color: v.$textColor-colorBlue;
+          margin-bottom: 1rem;
+        }
+      }
+
+      .update_modal_title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        text-align: center;
+      }
+
+      .update_modal_profile_containerButton {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        @include media(tablet_mini) {
+          flex-wrap: nowrap;
+          width: 100%;
+          justify-content: space-evenly;
+        }
+        @include media(desktop) {
+          flex-wrap: nowrap;
+          width: 100%;
+          justify-content: space-evenly;
+        }
+      }
+
+      button {
+        border-radius: 5px;
+        padding: 0.5rem;
+        width: 80%;
+        border: none;
+        cursor: pointer;
+        background-color: v.$textColor-colorBlue;
+        color: white;
+        font-weight: 500;
+      }
+
+      .errorMessage {
+        color: red;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

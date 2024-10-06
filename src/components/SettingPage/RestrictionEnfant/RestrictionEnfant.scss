@@ -1,0 +1,75 @@
+@use '../../../styles/variables' as v;
+@import '../../../styles/breakpoint.scss';
+
+.label_restriction {
+  display: inline-block;
+  padding-right: 2rem;
+  text-align: end;
+  width: 55%;
+  height: 3rem;
+
+  @include media(desktop) {
+    width: 51%;
+  }
+}
+
+.settingPage_inputDiv {
+  margin: auto;
+  padding: auto;
+}
+
+.settingPageDiv_checkboxRestrict {
+  margin: 0.8rem 0;
+  position: relative;
+  top: 1rem;
+  display: inline-block;
+  appearance: none;
+  width: 50px;
+  height: 20px;
+  background: #c6c6c6;
+  outline: none;
+  border-radius: 20px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease-in-out;
+}
+
+.settingPageDiv_checkboxRestrict::before {
+  content: '';
+  position: absolute;
+  font-size: 0.8rem;
+  color: v.$btnBg-landing;
+  font-weight: bold;
+
+  text-align: center;
+  line-height: 1.6;
+  bottom: -0.08rem;
+  left: -0.1rem;
+  width: 23px;
+  height: 23px;
+  border: black;
+  border-radius: 50%;
+  background: white;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transform: scale(1.2);
+}
+
+.settingPageDiv_checkboxRestrict:checked::before {
+  content: '';
+  position: absolute;
+  font-size: 0.8rem;
+  color: v.$btnBg-landing;
+  text-align: center;
+  line-height: 1.6;
+  bottom: -0.08rem;
+  left: 1.9rem;
+  width: 23px;
+  height: 23px;
+  border: black;
+  border-radius: 50%;
+  transition: all 0.4s ease-in-out;
+}
+
+.settingPageDiv_checkboxRestrict:checked {
+  background: v.$btnBg-landing;
+}

@@ -1,0 +1,280 @@
+@use '../../styles/variables' as v;
+@import '../../styles/breakpoint.scss';
+
+.settingPage {
+  background-color: v.$textColor-colorWhite;
+  width: 100%;
+  height: 86vh;
+  padding: 2rem;
+
+  @include media(desktop) {
+    margin-left: 4.5rem;
+  }
+
+  &_checkboxNotif {
+    margin: 0.8rem 0;
+    position: relative;
+    top: 0.2rem;
+    display: inline-block;
+    appearance: none;
+    width: 50px;
+    height: 20px;
+    background: #c6c6c6;
+    outline: none;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease-in-out;
+  }
+
+  &_checkboxNotif::before {
+    content: '';
+    position: absolute;
+    font-size: 0.8rem;
+    color: v.$btnBg-landing;
+    font-weight: bold;
+
+    text-align: center;
+    line-height: 1.6;
+    bottom: -0.08rem;
+    left: -0.1rem;
+    width: 23px;
+    height: 23px;
+    border: black;
+    border-radius: 50%;
+    background: white;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: scale(1.2);
+  }
+
+  &_checkboxNotif:checked::before {
+    content: '';
+    position: absolute;
+    font-size: 0.8rem;
+    color: v.$btnBg-landing;
+    text-align: center;
+    line-height: 1.6;
+    bottom: -0.08rem;
+    left: 1.9rem;
+    width: 23px;
+    height: 23px;
+    border: black;
+    border-radius: 50%;
+    transition: all 0.4s ease-in-out;
+  }
+
+  &_checkboxNotif:checked {
+    background: v.$btnBg-landing;
+  }
+
+  &_notifDiv {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  &_title {
+    padding-bottom: 0.5rem;
+  }
+
+  &_notifDiv_label {
+    position: relative;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  &_restrictionDiv {
+    width: 90%;
+    margin: 1rem auto;
+    // text-align: center;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    &_title {
+      text-align: center;
+    }
+
+    &_subtitle {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 300;
+      font-style: italic;
+      color: v.$textColor-colorGray;
+    }
+  }
+
+  @keyframes dothabottomcheck {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: calc(var(--checkbox-height) / 2);
+    }
+  }
+
+  @keyframes dothatopcheck {
+    0% {
+      height: 0;
+    }
+    50% {
+      height: 0;
+    }
+    100% {
+      height: calc(var(--checkbox-height) * 1.2);
+    }
+  }
+}
+
+.settingPage-dark {
+  background-color: v.$textColor-colorDark-Blue;
+  width: 100%;
+  height: 89vh;
+  padding: 2rem;
+  color: v.$textColor-colorWhite;
+
+  @include media(desktop) {
+    margin-left: 4.5rem;
+  }
+
+  &_checkboxNotif {
+    margin: 0.8rem 0;
+    position: relative;
+    top: 0.2rem;
+    display: inline-block;
+    appearance: none;
+    width: 50px;
+    height: 20px;
+    background: #c6c6c6;
+    outline: none;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease-in-out;
+    color: v.$textColor-colorWhite;
+  }
+
+  &_checkboxNotif::before {
+    content: '';
+    position: absolute;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: v.$textColor-colorWhite;
+    text-align: center;
+    line-height: 1.6;
+    bottom: -0.08rem;
+    left: -0.1rem;
+    width: 23px;
+    height: 23px;
+    border: black;
+    border-radius: 50%;
+    background: white;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: scale(1.2);
+  }
+
+  &_checkboxNotif:checked::before {
+    content: '';
+    position: absolute;
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 1.6;
+    bottom: -0.08rem;
+    left: 1.9rem;
+    width: 23px;
+    height: 23px;
+    border: black;
+    border-radius: 50%;
+    transition: all 0.4s ease-in-out;
+    color: v.$textColor-colorWhite;
+  }
+
+  &_checkboxNotif:checked {
+    background: v.$btnBg-landing;
+  }
+
+  &_notifDiv {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: v.$textColor-colorWhite;
+  }
+
+  &_title {
+    padding-bottom: 0.5rem;
+    color: v.$textColor-colorWhite;
+  }
+
+  &_notifDiv_label {
+    position: relative;
+    right: 1rem;
+    bottom: 1rem;
+    color: v.$textColor-colorWhite;
+  }
+
+  &_restrictionDiv {
+    width: 90%;
+    margin: 1rem auto;
+    // text-align: center;
+    padding: 0.5rem;
+    color: v.$textColor-colorWhite;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    &_title {
+      text-align: center;
+      color: v.$textColor-colorWhite;
+    }
+
+    &_subtitle {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 300;
+      font-style: italic;
+      color: v.$textColor-colorWhite;
+    }
+  }
+
+  @keyframes dothabottomcheck {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: calc(var(--checkbox-height) / 2);
+    }
+  }
+
+  @keyframes dothatopcheck {
+    0% {
+      height: 0;
+    }
+    50% {
+      height: 0;
+    }
+    100% {
+      height: calc(var(--checkbox-height) * 1.2);
+    }
+  }
+}

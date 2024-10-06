@@ -1,0 +1,12 @@
+$breakpoints: (
+  mobile: '(max-width: 424px)',
+  tablet: '(min-width:425px) and (max-width: 1023px)',
+  desktop: '(min-width: 1024px)',
+  tablet_mini: '(min-width:425px)',
+);
+
+@mixin media($device) {
+  @media only screen and #{map-get($breakpoints, $device)} {
+    @content;
+  }
+}

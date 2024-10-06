@@ -1,0 +1,342 @@
+@use '../../styles/variables' as v;
+@import '../../styles/breakpoint.scss';
+
+.profilePage_container {
+  width: 100%;
+
+  &_presentation {
+    margin: auto;
+    width: 100%;
+
+    &_title {
+      font-size: 2rem;
+      font-weight: 500;
+      padding-top: 1rem;
+      text-align: center;
+    }
+  }
+
+  &_member {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 3rem;
+
+    &_title {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin: 1rem 0 0.5rem 0;
+      text-align: center;
+      width: 100%;
+    }
+
+    &_list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 3rem;
+      width: 90%;
+
+      .profilePage_container_member_card {
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+        margin: 1rem;
+        padding: 1rem;
+        width: 90%;
+        max-height: 30rem;
+        overflow-y: auto;
+        @include media(desktop) {
+          width: 15rem;
+          max-height: 25rem;
+        }
+        @include media(tablet_mini) {
+          max-width: 60%;
+        }
+
+        .profilePage_container_memberCard_image {
+          border-radius: 50%;
+          height: 100px;
+          margin: auto;
+          width: 100px;
+        }
+
+        .profilePage_container_member_card_name {
+          font-size: 1.2rem;
+          font-weight: 500;
+          margin: 1rem auto;
+          text-align: center;
+        }
+
+        .profilePage_container_member_card_birthday,
+        .profilePage_container_member_card_score {
+          font-size: 1rem;
+          margin: 1rem 0;
+          font-weight: 200;
+          text-align: justify;
+        }
+
+        .profilePage_container_member_card_task-to-do {
+          font-size: 1rem;
+          margin: 1rem 0;
+          font-weight: 500;
+          text-decoration: underline;
+          text-align: center;
+        }
+
+        .profilePage_container_member_card_task {
+          margin-top: 0.5rem;
+          margin-bottom: 1rem;
+          border-radius: 5px 5px 0 0;
+          border: 1px solid lightgray;
+        }
+
+        .profilePage_container_member_card_task_headerDate {
+          width: 100%;
+          background-color: v.$textColor-colorOrange;
+          color: white;
+          font-weight: 500;
+          border-radius: 5px 5px 0 0;
+        }
+
+        .profilePage_container_member_card_task_containerName {
+          width: 100%;
+          background-color: white;
+        }
+
+        .profilePage_container_member_card_task_name,
+        .profilePage_container_member_card_task_date {
+          font-size: 1rem;
+          font-weight: 500;
+          text-align: center;
+          padding: 0.4rem 0;
+        }
+
+        .profilePage_container_member_card_icones {
+          display: flex;
+          justify-content: space-between;
+          position: relative;
+
+          .profilePage_container_member_card_iconEdit {
+            top: 12px;
+            right: 12px;
+            font-size: 1.2rem;
+            color: v.$textColor-colorOrange;
+            cursor: pointer;
+            transition: color 0.2s;
+
+            &:hover {
+              color: black;
+            }
+          }
+
+          .profilePage_container_member_card_iconDelete {
+            top: 12px;
+            left: 12px;
+            font-size: 1.2rem;
+            color: v.$textColor-colorOrange;
+            cursor: pointer;
+            transition: color 0.2s;
+
+            &:hover {
+              color: red;
+            }
+          }
+        }
+
+        .profilePage_container_member_card_iconAddProfile {
+          font-size: 1.2rem;
+          color: v.$textColor-colorOrange;
+          cursor: pointer;
+          transition: color 0.2s;
+          width: 50%;
+          height: 35%;
+          margin: 0 auto;
+
+          &:hover {
+            color: v.$textColor-colorBlue;
+          }
+        }
+      }
+    }
+  }
+}
+
+.profilePage_container-dark {
+  width: 100%;
+  height: 100%;
+  background-color: v.$textColor-colorDark-Blue;
+
+  &_presentation {
+    margin: auto;
+    width: 100%;
+    color: v.$textColor-colorWhite;
+
+    &_title {
+      font-size: 2rem;
+      font-weight: 500;
+      padding-top: 1rem;
+      text-align: center;
+      color: v.$textColor-colorWhite;
+    }
+  }
+
+  &_member {
+    color: v.$textColor-colorWhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 3rem;
+
+    &_title {
+      color: v.$textColor-colorWhite;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin: 1rem 0 0.5rem 0;
+      text-align: center;
+      width: 100%;
+    }
+
+    &_list {
+      color: v.$textColor-colorWhite;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 3rem;
+      width: 90%;
+
+      .profilePage_container-dark_member_card {
+        background-color: v.$textColor-colorDark-Blue;
+        border-radius: 5px;
+        box-shadow: 0px 0px 2px 1px white;
+        color: v.$textColor-colorWhite;
+        margin: 1rem;
+        padding: 1rem;
+        width: 90%;
+        max-height: 30rem;
+        overflow-y: auto;
+        @include media(desktop) {
+          width: 15rem;
+          max-height: 25rem;
+        }
+        @include media(tablet_mini) {
+          max-width: 60%;
+        }
+
+        .profilePage_container-dark_memberCard_image {
+          border-radius: 50%;
+          height: 100px;
+          margin: auto;
+          width: 100px;
+        }
+
+        .profilePage_container-dark_member_card_name {
+          font-size: 1.2rem;
+          color: v.$textColor-colorWhite;
+          font-weight: 500;
+          margin: 1rem auto;
+          text-align: center;
+        }
+
+        .profilePage_container-dark_member_card_birthday,
+        .profilePage_container-dark_member_card_score {
+          font-size: 1rem;
+          color: v.$textColor-colorWhite;
+          margin: 1rem 0;
+          font-weight: 200;
+          text-align: justify;
+        }
+
+        .profilePage_container-dark_member_card_task-to-do {
+          font-size: 1rem;
+          margin: 1rem 0;
+          color: v.$textColor-colorWhite;
+          font-weight: 500;
+          text-decoration: underline;
+          text-align: center;
+        }
+
+        .profilePage_container-dark_member_card_task {
+          margin-top: 0.5rem;
+          margin-bottom: 1rem;
+          color: v.$textColor-colorWhite;
+          border: 1px solid white;
+          border-radius: 5px 5px 0 0;
+        }
+
+        .profilePage_container-dark_member_card_task_headerDate {
+          width: 100%;
+          background-color: v.$textColor-colorOrange;
+          color: white;
+          font-weight: 500;
+          border-radius: 5px 5px 0 0;
+        }
+
+        .profilePage_container-dark_member_card_task_containerName {
+          width: 100%;
+          background-color: v.$textColor-colorDark-Blue;
+        }
+
+        .profilePage_container-dark_member_card_task_name,
+        .profilePage_container-dark_member_card_task_date {
+          font-size: 1rem;
+          font-weight: 500;
+          color: v.$textColor-colorWhite;
+          text-align: center;
+          padding: 0.4rem 0;
+        }
+
+        .profilePage_container-dark_member_card_icones {
+          display: flex;
+          justify-content: space-between;
+          position: relative;
+          color: v.$textColor-colorWhite;
+
+          .profilePage_container-dark_member_card_iconEdit {
+            top: 12px;
+            right: 12px;
+            font-size: 1.2rem;
+            color: v.$textColor-colorWhite;
+            cursor: pointer;
+            transition: color 0.2s;
+
+            &:hover {
+              color: black;
+            }
+          }
+
+          .profilePage_container-dark_member_card_iconDelete {
+            top: 12px;
+            left: 12px;
+            font-size: 1.2rem;
+            color: v.$textColor-colorWhite;
+            cursor: pointer;
+            transition: color 0.2s;
+
+            &:hover {
+              color: red;
+            }
+          }
+        }
+
+        .profilePage_container-dark_member_card_iconAddProfile {
+          font-size: 1.2rem;
+          color: v.$textColor-colorWhite;
+          cursor: pointer;
+          transition: color 0.2s;
+          width: 50%;
+          height: 35%;
+          margin: 0 auto;
+
+          &:hover {
+            color: v.$textColor-colorBlue;
+          }
+        }
+      }
+    }
+  }
+}

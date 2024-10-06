@@ -1,0 +1,47 @@
+@use '../../../styles/variables' as v;
+@import '../../../styles/breakpoint.scss';
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 10%;
+  z-index: 15;
+  background-color: transparent;
+}
+
+.popup {
+  display: flex;
+  justify-content: center;
+  background-color: v.$bgColor-green-blur;
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border: 0;
+  border-radius: 5px;
+  padding: 1rem 1rem;
+  color: white;
+  width: 60%;
+  font-weight: 600;
+  transform: scale(0);
+  opacity: 0;
+  @include media(mobile) {
+    transform: translateX(-50%);
+  }
+  @include media(tablet) {
+    right: 50%;
+    top: 20%;
+  }
+  @include media(desktop) {
+    right: 50%;
+    bottom: 20%;
+  }
+
+  &-isVisible {
+    transform: scale(1);
+    opacity: 1;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  }
+}

@@ -1,0 +1,377 @@
+@use '../../styles/variables' as v;
+@import '../../styles/breakpoint.scss';
+
+.dark.header {
+  background: v.$textColor-colorDark 100%;
+  transition: all 0.6s ease-in-out;
+  position: relative;
+  color: v.$textColor-colorWhite;
+  box-shadow: 0px 0px 3px lightgray;
+}
+.dark .header_menuMobile-open {
+  background-color: v.$textColor-colorDark;
+  color: v.$textColor-colorWhite;
+}
+
+.dark .header_menuMobileDiv {
+  background-color: v.$textColor-colorDark;
+  color: v.$textColor-colorWhite;
+}
+
+.dark .header_BtnMenuMobile {
+  color: v.$textColor-colorWhite;
+}
+
+.dark .header_menuMobile_icon {
+  background-color: v.$textColor-colorDark;
+  color: v.$textColor-colorWhite;
+}
+
+.dark .header_menuMobile_link {
+  color: v.$textColor-colorWhite;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.6s ease-in-out;
+  z-index: 10;
+  position: relative;
+  position: sticky;
+  top: 0;
+  height: 8vh;
+  background-color: v.$bgColor-White;
+  box-shadow: 1px 1px 5px 0px lightgray;
+
+  &_BtnMenuMobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 1rem;
+    bottom: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+    font-size: 1.4rem;
+    background-color: v.$textColor-colorWhite;
+    border: none;
+    cursor: pointer;
+    @include media(desktop) {
+      display: none;
+    }
+  }
+
+  &-bar,
+  &-bar::before,
+  &-bar::after {
+    position: relative;
+    width: 1.5rem;
+    height: 0.15rem;
+    background-color: v.$textColor-colorDark;
+    transition: 0.6s ease-in-out all;
+    border-radius: 20%;
+  }
+
+  &-bar::before,
+  &-bar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+
+  &-bar::before {
+    transform: translateY(-6px);
+  }
+
+  &-bar::after {
+    transform: translateY(6px);
+  }
+
+  &_btnDiv-open &-bar::before {
+    transform: rotate(45deg);
+  }
+
+  &_btnDiv-open &-bar {
+    position: absolute;
+    left: 0.5rem;
+    width: 0;
+    background: transparent;
+  }
+
+  &_btnDiv-open &-bar::after {
+    transform: rotate(-45deg);
+  }
+
+  &_menuMobile {
+    background-color: v.$bgColor-White;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 100%;
+    right: 40%;
+    height: 100vh;
+    width: 100vw;
+    font-size: 0;
+    border-bottom-right-radius: 100%;
+    transition: all 0.6s ease-in-out;
+    @include media(desktop) {
+      display: none;
+    }
+  }
+
+  &_menuMobile-open {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    background: rgba( 255, 255, 255, 0.7 );
+    width: 110vw;
+    height: 110vh;
+    font-size: 1.2rem;
+    transition: all 0.6s ease-in-out;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    @include media(desktop) {
+      display: none;
+    }
+
+    &_avatar {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+
+      &_link {
+        width: 80px;
+        height: 80px;
+      }
+
+      &_img {
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        border: 1px solid v.$textColor-colorBlue;
+      }
+    }
+  }
+
+  &_menuMobileDiv {
+    position: relative;
+    width: 100vw;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem;
+    color: v.$textColor-colorDark;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &_menuMobile_link {
+    color: inherit;
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 0.2rem;
+    text-decoration: none;
+  }
+
+  &_menuMobile_icon {
+    color: v.$textColor-colorDark;
+    font-size: 2rem;
+    border-radius: 100%;
+  }
+
+  &_avatar {
+    display: none;
+    @include media(desktop) {
+      display: block;
+      width: 65px;
+      height: 65px;
+      border-radius: 100%;
+      position: absolute;
+      left: 0.1rem;
+      bottom: -4.5rem;
+      transition: all 0.6s ease-in-out;
+
+      &_link {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+      }
+
+      &_img {
+        width: 100%;
+        height: 100%;
+        transform: rotate(360deg);
+        transition: all 0.6s ease-in-out;
+        border-radius: 100%;
+      }
+    }
+  }
+
+  &_avatar-menuOpen {
+    display: none;
+    @include media(desktop) {
+      display: block;
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      position: absolute;
+      left: 2.3rem;
+      bottom: -3rem;
+      transform: rotate(360deg);
+      transition: all 0.6s ease-in-out;
+
+      &_link {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+      }
+      &_img {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        transform: rotate(360deg);
+        transition: all 0.6s ease-in-out;
+      }
+    }
+  }
+
+  &_logo {
+    width: 110px;
+    margin: auto;
+    padding: auto;
+  }
+
+  &_menuItems {
+    width: 10%;
+    height: 100%;
+    margin: auto;
+  }
+
+  &_btn {
+    position: absolute;
+    top: 0.3rem;
+    font-size: 0.8rem;
+    margin: 0;
+    width: 160px;
+    height: 40px;
+    color: v.$textColor-colorDark;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    background: v.$textColor-colorDark;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+      7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    outline: none;
+  }
+
+  &_title {
+    text-decoration: none;
+    color: v.$textColor-colorDark;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}
+
+.btn-login {
+  background: v.$textColor-colorBlue;
+  width: 100px;
+  height: 40px;
+  line-height: 42px;
+  color: v.$textColor-colorWhite;
+  padding: 0;
+  border: none;
+  margin-top: 0.2rem;
+  position: fixed;
+  right: 1rem;
+  @include media(mobile) {
+    width: 80px;
+    height: 35px;
+    line-height: 35px;
+    right: 0.5rem;
+    margin-top: 0.6rem;
+  }
+}
+
+.btn-login span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  @include media(mobile) {
+    font-size: 0.7rem;
+  }
+}
+.btn-login:before,
+.btn-login:after {
+  position: absolute;
+  content: '';
+  right: 0;
+  top: 0;
+  background: v.$textColor-colorDark;
+  transition: all 0.3s ease;
+}
+.btn-login:before {
+  height: 0%;
+  width: 2px;
+}
+.btn-login:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-login:hover {
+  border-radius: 5px;
+  background: v.$bgColor-White;
+  box-shadow: none;
+}
+.btn-login:hover:before {
+  height: 100%;
+}
+.btn-login:hover:after {
+  width: 100%;
+}
+.btn-login span:hover {
+  border-radius: 10px 0 10px;
+  color: v.$textColor-colorDark;
+}
+.btn-login span:before,
+.btn-login span:after {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  background: v.$textColor-colorDark;
+  transition: all 0.3s ease;
+}
+.btn-login span:before {
+  width: 2px;
+  height: 0%;
+}
+.btn-login span:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-login span:hover:before {
+  height: 100%;
+}
+.btn-login span:hover:after {
+  width: 100%;
+}

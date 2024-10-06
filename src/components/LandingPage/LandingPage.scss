@@ -1,0 +1,193 @@
+@use '../../styles/variables' as v;
+@import '../../styles/breakpoint.scss';
+
+.btn-functionality {
+  min-width: 8rem;
+  border-radius: 5px;
+  padding: 0.2rem;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.landingPage {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+
+  &_btn {
+    background-color: v.$textColor-colorBlue;
+  }
+
+  &_BoxFunctionality {
+    background: v.$textColor-colorWhite;
+  }
+
+  &_title {
+    text-align: center;
+    padding: 1rem 0 0.5rem 0;
+  }
+
+  &_img {
+    margin: 0rem auto;
+    border-radius: 5px;
+    border: 1px solid v.$textColor-colorBlue;
+    @include media(desktop) {
+      width: 40%;
+      height: 40vh;
+      margin: 0;
+    }
+    @include media(tablet) {
+      width: 80%;
+      margin: 0;
+    }
+  }
+
+  &_listeFonctionnalite {
+    // background-color: v.$textColor-colorWhite;
+    list-style: none;
+    padding: 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    @include media(desktop) {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+  }
+
+  &_listeItem {
+    text-align: center;
+    padding: 0.3rem 0;
+
+    @include media(desktop) {
+      padding: auto;
+      margin: 0.5rem;
+    }
+  }
+
+  &_divDescription {
+    width: 100%;
+    flex-direction: column;
+    padding: 0.6rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    &_courses
+    {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100%;
+      padding: 0.5rem;
+        
+      & .iconeBasket,
+      & .iconeCart {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0.5rem;
+        color: v.$textColor-colorPink;
+      }
+    }
+
+    &_budget
+    {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100%;
+      padding: 0.5rem;
+        
+      & .iconeBudget {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0.5rem;
+        color: v.$textColor-colorGreen;
+      }
+    }
+
+    &_iconesMeteo
+    {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100%;
+      padding: 0.5rem;
+        
+      & .iconeSun,
+      & .iconeMoon {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0.5rem;
+        color: v.$textColor-colorOrange;
+      }
+    }
+  }
+  &_description {
+    text-align: center;
+    width: 100%;
+    padding: 0.5rem;
+  }
+}
+
+.btn-signin {
+  // position: fixed;
+  background-color: v.$textColor-colorBlue;
+  width: 80%;
+  min-height: 35px;
+  font-weight: bold;
+  color: v.$textColor-colorWhite;
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  border: none;
+  transition: all 0.2s ease-in-out;
+
+  @include media(desktop) {
+    margin: 0;
+    width: 240px;
+    height: 40px;
+    color: v.$textColor-colorWhite;
+    border-radius: 5px;
+    // padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    background: v.$textColor-colorBlue;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+      7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    outline: none;
+  }
+}
+
+.btn-signin:hover {
+  background: v.$bgColor-dark;
+}
+
+.btn-functionality {
+  background: v.$textColor-colorBlue;
+  color: v.$textColor-colorWhite;
+  transition: all 0.2s ease-in-out;
+
+  border: none;
+}
+.btn-functionality:hover {
+  background: v.$bgColor-dark;
+}

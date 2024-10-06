@@ -1,0 +1,361 @@
+@use '../../styles/variables' as v;
+@import '../../styles/breakpoint.scss';
+
+.selectProfile_container {
+  width: 100%;
+  background-color: v.$bgColor-White;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  padding: 2rem;
+
+  &_presentation {
+    width: 100%;
+    text-align: center;
+
+    &_title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 1rem 0;
+      color: v.$textColor-colorDark;
+    }
+  }
+
+  &_member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    &_title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: v.$textColor-colorDark;
+    }
+
+    &_list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      @include media(desktop) {
+        flex-wrap: nowrap;
+        gap: 2rem;
+      }
+      @include media(tablet) {
+        flex-wrap: nowrap;
+        gap: 2rem;
+      }
+      @include media(tablet_mini) {
+        flex-wrap: wrap;
+      }
+    }
+
+    &_card {
+      position: relative;
+      width: 100%;
+      max-width: 200px;
+      margin: 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+
+      &_link {
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: transparent;
+      }
+
+      // &_link:hover {
+      //   border: 2px solid v.$textColor-colorBlue;
+      //   background-color: red;
+      // }
+
+      &_image {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 8px;
+        border: 2px solid transparent;
+        transition: border 0.1s ease-in-out;
+        box-shadow: 1px 1px 5px 2px lightgray;
+        border-radius: 50%;
+        &:hover {
+          border: 2px solid v.$textColor-colorBlue;
+          width: 8rem;
+          height: 8rem;
+        }
+      }
+
+      &_name {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: v.$textColor-colorBlue;
+        @include media(desktop) {
+          font-size: 0.8rem;
+        }
+        @include media(tablet) {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+
+  @include media(mobile) {
+    &_presentation {
+      &_title {
+        font-size: 2rem;
+      }
+    }
+
+    &_member {
+      &_title {
+        font-size: 1.5rem;
+      }
+
+      &_card {
+        width: 50%;
+        margin: 0.5rem;
+
+        &_name {
+          font-size: 1rem;
+        }
+      }
+      &_card_gestion {
+        width: 10rem;
+        height: 2.5rem;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  @include media(tablet) {
+    &_member {
+      &_card {
+        width: 45%;
+      }
+    }
+  }
+
+  @include media(desktop) {
+    &_member {
+      &_card {
+        width: 30%;
+      }
+    }
+  }
+}
+
+.selectProfile_container-dark {
+  width: 100%;
+  height: 89vh;
+  background-color: v.$textColor-colorDark-Blue;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  padding: 2rem;
+  @include media(desktop) {
+    height: 100%;
+    justify-content: space-evenly;
+  }
+  @include media(tablet) {
+    height: 100vh;
+    justify-content: flex-start;
+  }
+  @include media(tablet_mini) {
+    height: 100vh;
+    justify-content: flex-start;
+  }
+
+  &_presentation {
+    width: 100%;
+    text-align: center;
+    background-color: v.$textColor-colorDark-Blue;
+    color: white;
+
+    &_title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 1rem 0;
+      background-color: v.$textColor-colorDark-Blue;
+      color: white;
+    }
+  }
+
+  &_member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    color: white;
+
+    &_title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    &_list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      color: white;
+
+      @include media(desktop) {
+        flex-wrap: nowrap;
+        gap: 2rem;
+      }
+      @include media(tablet) {
+        flex-wrap: nowrap;
+        gap: 2rem;
+      }
+      @include media(tablet_mini) {
+        flex-wrap: wrap;
+      }
+    }
+
+    &_card {
+      position: relative;
+      width: 100%;
+      max-width: 200px;
+      margin: 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      background-color: v.$textColor-colorDark-Blue;
+      color: white;
+
+      &_name {
+        color: white;
+        text-decoration: none;
+      }
+      
+      &_link, a {
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: transparent;
+        color: white;
+        text-decoration: none;
+      }
+
+      // &_link:hover {
+      //   border: 2px solid v.$textColor-colorBlue;
+      //   background-color: red;
+      // }
+
+      &_image {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 8px;
+        border: 2px solid transparent;
+        transition: border 0.1s ease-in-out;
+        box-shadow: 1px 1px 5px 2px lightgray;
+        border-radius: 50%;
+        &:hover {
+          border: 2px solid v.$textColor-colorBlue;
+          width: 8rem;
+          height: 8rem;
+        }
+      }
+
+      &_name {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: v.$textColor-colorWhite;
+        @include media(desktop) {
+          font-size: 0.8rem;
+        }
+        @include media(tablet) {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+
+  @include media(mobile) {
+    &_presentation {
+      &_title {
+        font-size: 2rem;
+      }
+    }
+
+    &_member {
+      &_title {
+        font-size: 1.5rem;
+      }
+
+      &_card {
+        width: 50%;
+        margin: 0.5rem;
+
+        &_name {
+          font-size: 1rem;
+        }
+      }
+      &_card_gestion {
+        width: 10rem;
+        height: 2.5rem;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  @include media(tablet) {
+    &_member {
+      &_card {
+        width: 45%;
+        &_name {
+          color: white;
+        }
+      }
+    }
+  }
+
+  @include media(desktop) {
+    &_member {
+      &_card {
+        width: 30%;
+        &_name {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.selectProfile_container_member_card:hover
+  .selectProfile_container_member_card_image {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 3px 2px v.$textColor-colorBlue;
+  border-radius: 50%;
+}

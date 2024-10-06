@@ -1,0 +1,210 @@
+@use '../../../styles/variables' as v;
+
+$breakpoints: (
+  mobile: '(max-width: 424px)',
+  tablet: '(min-width:425px) and (max-width: 1023px)',
+  desktop: '(min-width: 1024px)',
+);
+
+@mixin media($device) {
+  @media only screen and #{map-get($breakpoints, $device)} {
+    @content;
+  }
+}
+
+.btnSideBarMenu {
+  border-radius: 20px;
+  display: block;
+  position: fixed;
+  border: none;
+  left: 0.5rem;
+  top: 1.5rem;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+
+  &-open {
+    background-color: v.$textColor-colorDark;
+    border-radius: 20px;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+      7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  &-open &-bar::before {
+    transform: rotate(45deg);
+    height: 3px;
+    background: white;
+  }
+
+  &-open &-bar {
+    background: transparent;
+    width: 0;
+  }
+  &-open &-bar::after {
+    transform: rotate(-45deg);
+    height: 3px;
+    background: white;
+  }
+
+  &-bar,
+  &-bar::before,
+  &-bar::after {
+    display: block;
+    width: 1.8rem;
+    height: 2px;
+    position: relative;
+    right: 0.05rem;
+    border-radius: 3px;
+    background: v.$textColor-colorDark;
+    transition: all 0.4s ease-in-out;
+  }
+
+  &-bar::before,
+  &-bar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+
+  &-bar::before {
+    transform: translateY(-8px);
+  }
+
+  &-bar::after {
+    transform: translateY(8px);
+  }
+}
+
+.btnSideBarMenu:hover {
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(82, 79, 79, 0.1);
+}
+
+.sideMenu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  left: 0;
+  padding-right: 0.2rem;
+  bottom: 0;
+  background-color: white;
+  height: 92vh;
+  width: 5vw;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(82, 79, 79, 0.1);
+  transition: all 0.6s ease-in-out;
+}
+
+.sideMenu-open {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  left: 0;
+  padding-right: 0.2rem;
+  bottom: 0;
+  background-color: white;
+  height: 92vh;
+  width: 17vw;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(82, 79, 79, 0.1);
+  transition: all 0.6s ease-in-out;
+}
+
+.sideMenu-open a {
+  color: black;
+  width: 99%;
+  border: none;
+  background-color: transparent;
+  text-align: start;
+  padding: 0.6rem 1.3rem;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.sideMenu a {
+  color: black;
+  width: 99%;
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  padding: 0.6rem 1.3rem;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.sideMenu a.active,
+.sideMenu-open a.active {
+  width: 99%;
+  padding: auto;
+  border-radius: 0.6rem;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px 3px rgb(94, 89, 89);
+}
+
+.sideMenu a:hover,
+.sideMenu-open a:hover {
+  width: 99%;
+  padding: auto;
+  border-radius: 0.6rem;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px 3px rgb(94, 89, 89);
+}
+
+.toggleLeft {
+  display: block;
+  position: fixed;
+  left: 3.5rem;
+  bottom: 0.2rem;
+  color: black;
+  height: 3rem;
+}
+
+.toggleLeft-hidden {
+  display: none;
+}
+
+.toggleRight {
+  display: block;
+  position: fixed;
+  left: 3.5rem;
+  bottom: 0.2rem;
+  color: black;
+  height: 3rem;
+}
+
+.toggleRight-hidden {
+  display: none;
+}
+
+.sunModeIcon {
+  display: block;
+  position: fixed;
+  width: 60px;
+  height: 2rem;
+  bottom: 0.8rem;
+  left: 0rem;
+
+  &-open {
+    width: 60px;
+    position: fixed;
+    bottom: 0.8rem;
+    left: 0rem;
+  }
+}
+
+.sideNavIcon {
+  display: inline;
+  text-align: center;
+  margin: auto;
+}
+
+.navLink_desc-hidden {
+  display: none;
+}
